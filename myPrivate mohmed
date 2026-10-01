@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المعرض الدولي للتخفيضات</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tahoma', sans-serif; }
+  body { background: #f5f5f5; color: #333; }
+
+  /* الهيدر */
+  header {
+    background: linear-gradient(135deg, #6a1b9a, #ab47bc);
+    color: white; padding: 20px; text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  }
+  header h1 { font-size: 28px; margin-bottom: 8px; }
+  header p { font-size: 14px; opacity: 0.9; }
+
+  /* شريط التنقل */
+  nav {
+    background: #4a148c; padding: 10px;
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+    position: sticky; top: 0; z-index: 100;
+  }
+  nav a {
+    color: white; text-decoration: none; padding: 8px 14px;
+    border-radius: 20px; font-size: 14px; transition: 0.3s;
+  }
+  nav a:hover { background: #ab47bc; }
+
+  /* قسم البطل */
+  .hero {
+    background: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200') center/cover;
+    color: white; padding: 80px 20px; text-align: center;
+    position: relative;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: rgba(106, 27, 154, 0.7);
+  }
+  .hero > * { position: relative; z-index: 1; }
+  .hero h2 { font-size: 32px; margin-bottom: 15px; }
+  .hero p { font-size: 18px; margin-bottom: 25px; }
+  .hero .btn {
+    background: #25D366; color: white; padding: 14px 35px;
+    border-radius: 30px; text-decoration: none; font-size: 18px;
+    font-weight: bold; display: inline-block; transition: 0.3s;
+  }
+  .hero .btn:hover { background: #128C7E; transform: scale(1.05); }
+
+  /* الأقسام */
+  .section { padding: 40px 20px; max-width: 1200px; margin: auto; }
+  .section h3 {
+    text-align: center; font-size: 26px; color: #4a148c;
+    margin-bottom: 30px; border-bottom: 3px solid #ab47bc;
+    display: inline-block; padding-bottom: 8px;
+  }
+  .section-title-wrapper { text-align: center; margin-bottom: 20px; }
+
+  /* شبكة المنتجات */
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .product {
+    background: white; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: 0.3s;
+    display: flex; flex-direction: column;
+  }
+  .product:hover { transform: translateY(-5px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+  .product img {
+    width: 100%; height: 200px; object-fit: cover; background: #eee;
+  }
+  .product-info { padding: 15px; flex: 1; display: flex; flex-direction: column; }
+  .product-info h4 { font-size: 16px; margin-bottom: 8px; color: #333; }
+  .product-info .price {
+    font-size: 18px; color: #6a1b9a; font-weight: bold; margin-bottom: 12px;
+  }
+  .product-info .price .old {
+    font-size: 13px; color: #999; text-decoration: line-through; margin-right: 8px;
+  }
+  .order-btn {
+    background: #25D366; color: white; padding: 10px;
+    border-radius: 8px; text-align: center; text-decoration: none;
+    font-weight: bold; margin-top: auto; transition: 0.3s;
+  }
+  .order-btn:hover { background: #128C7E; }
+
+  /* معلومات التواصل */
+  .contact {
+    background: #4a148c; color: white; padding: 40px 20px; text-align: center;
+  }
+  .contact h3 { color: white; border-color: #ab47bc; }
+  .contact p { margin: 10px 0; font-size: 16px; }
+  .contact a { color: #25D366; text-decoration: none; font-weight: bold; }
+
+  /* الفوتر */
+  footer {
+    background: #2d0a3d; color: #ccc; text-align: center;
+    padding: 20px; font-size: 14px;
+  }
+
+  /* زر واتساب عائم */
+  .whatsapp-float {
+    position: fixed; bottom: 20px; left: 20px;
+    background: #25D366; color: white; width: 60px; height: 60px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 30px; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 999; transition: 0.3s;
+  }
+  .whatsapp-float:hover { transform: scale(1.1); }
+</style>
+</head>
+<body>
+
+<!-- الهيدر -->
+<header>
+  <h1>🛍️ المعرض الدولي للتخفيضات</h1>
+  <p>أفضل الأسعار • شحن لجميع المحافظات • عروض يومية</p>
+</header>
+
+<!-- شريط التنقل -->
+<nav>
+  <a href="#home">الرئيسية</a>
+  <a href="#accessories">إكسسوارات نسائية</a>
+  <a href="#cosmetics">أدوات تجميل</a>
+  <a href="#electronics">إلكترونيات</a>
+  <a href="#perfumes">عطورات</a>
+  <a href="#home-tools">أدوات منزلية</a>
+  <a href="#school">أدوات مدرسية</a>
+  <a href="#clothes">ملابس</a>
+  <a href="#contact">تواصل معنا</a>
+</nav>
+
+<!-- قسم البطل -->
+<section class="hero" id="home">
+  <h2>مرحباً بكم في متجرنا</h2>
+  <p>تصفح آلاف المنتجات بأسعار لا تُقاوم</p>
+  <a href="https://wa.me/967775336842" class="btn">📱 اطلب الآن عبر واتساب</a>
+</section>
+
+<!-- قسم الإكسسوارات النسائية -->
+<section class="section" id="accessories">
+  <div class="section-title-wrapper"><h3>💎 إكسسوارات نسائية</h3></div>
+  <div class="products">
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400" alt="منتج">
+      <div class="product-info">
+        <h4>طقم إكسسوارات ذهبي</h4>
+        <div class="price">15,000 ريال</div>
+        <a href="https://wa.me/967775336842?text=أريد%20طلب%20طقم%20إكسسوارات%20ذهبي" class="order-btn">اطلب عبر واتساب</a>
+      </div>
+    </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400" alt="منتج">
+      <div class="product-info">
+        <h4>ساعة نسائية أنيقة</h4>
+        <div class="price">25,000 ريال</div>
+        <a href="https://wa.me/967775336842?text=أريد%20طلب%20ساعة%20نسائية" class="order-btn">اطلب عبر واتساب</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- قسم أدوات التجميل -->
+<section class="section" id="cosmetics" style="background:#faf0ff;">
+  <div class="section-title-wrapper"><h3>💄 أدوات تجميل</h3></div>
+  <div class="products">
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400" alt="منتج">
+      <div class="product-info">
+        <h4>طقم مكياج متكامل</h4>
+        <div class="price">35,000 ريال</div>
+        <a href="https://wa.me/967775336842?text=أريد%20طلب%20طقم%20مكياج" class="order-btn">اطلب عبر واتساب</a>
+      </div>
+    </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400" alt="منتج">
+      <div class="product-info">
+        <h4>أحمر شفاه فاخر</h4>
+        <div class="price">8,000 ريال</div>
+        <a href="https://wa.me/967775336842?text=أريد%20طلب%20أحمر%20شفاه" class="order-btn">اطلب عبر واتساب</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- قسم الإلكترونيات -->
+<section class="section" id="electronics">
+  <div class="section-title-wrapper"><h3>📱 إلكترونيات</h3></div>
+  <div class="products">
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" alt="منتج">
+      <div class="product-info">
+        <h4>سماعات بلوتوث</h4>
+        <div class="price">20,000 ريال</div>
+        <a href="https://wa.me/967775336842?text=أريد%20طلب%20سماعات%20بلوتوث" class="order-btn">اطلب عبر واتساب</a>
+      </div>
+    </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400" alt="منتج">
+      <div class="product-info">
+        <h4>ساعة ذكية</h4>
+        <div class="price">45,000 ريال</div>
+        <a href="https://wa.me/967775336842?text=أريد%20طلب%20ساعة%20ذكية" class="order-btn">اطلب عبر واتساب</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- قسم العطورات -->
+<section class="section" id="perfumes" style="background:#faf0ff;">
+  <div class="section-title-wrapper"><h3>🌸 عطورات</h3></div>
+  <div class="products">
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=400" alt="منتج">
+      <div class="product-info">
+        <h4>عطر نسائي فاخر</h4>
+        <div class="price">30,000 ريال</div>
+        <a href="https://wa.me/967775336842?text=أريد%20طلب%20عطر%20نسائي" class="order-btn">اطلب عبر واتساب</a>
+      </div>
+    </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=400" alt="منتج">
+      <div class="product-info">
+        <h4>عطر رجالي</h4>
+        <div class="price">28,000 ريال</div>
+        <a href="https://wa.me/967775336842?text=أريد%20طلب%20عطر%20رجالي" class="order-btn">اطلب عبر واتساب</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- قسم التواصل -->
+<section class="contact" id="contact">
+  <div class="section-title-wrapper"><h3>📞 تواصل معنا</h3></div>
+  <p>📍 المركز الرئيسي: عدن - اليمن</p>
+  <p>📱 واتساب: <a href="https://wa.me/967775336842">775336842</a></p>
+  <p>🚚 خدمة الشحن: جميع المحافظات والمديريات</p>
+  <p>🕐 أوقات العمل: يومياً من 9 صباحاً حتى 10 مساءً</p>
+</section>
+
+<!-- الفوتر -->
+<footer>
+  <p>© 2025 المعرض الدولي للتخفيضات - جميع الحقوق محفوظة</p>
+</footer>
+
+<!-- زر واتساب عائم -->
+<a href="https://wa.me/967775336842" class="whatsapp-float" title="تواصل معنا">💬</a>
+
+</body>
+</html>
